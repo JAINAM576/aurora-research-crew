@@ -10,7 +10,7 @@ import AuthScreen from './components/AuthScreen';
 import Profile from './components/Profile';
 import History from './components/History';
 import { useReportStream } from './hooks/useReportStream';
-import { AlertCircle, RotateCcw, History as HistoryIcon, User, LogOut, LayoutDashboard, Menu, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { AlertCircle, RotateCcw, History as HistoryIcon, User, LogOut, LayoutDashboard, Menu, X } from 'lucide-react';
 
 type PageState = 'dashboard' | 'history' | 'profile';
 
@@ -55,7 +55,7 @@ function App() {
   const [elapsedTime, setElapsedTime] = useState<number>(0);
 
   useEffect(() => {
-    let intervalId: NodeJS.Timeout | null = null;
+    let intervalId: ReturnType<typeof setInterval> | null = null;
     
     if (isPipelineActive && isLoading) {
       const startTime = Date.now();

@@ -236,9 +236,11 @@ export default function History() {
                   {selectedReport.content || 'Report generation failed with an unknown error.'}
                 </div>
               ) : (
-                <ReactMarkdown remarkPlugins={[remarkGfm]} className="markdown-body">
-                  {selectedReport.content}
-                </ReactMarkdown>
+                <div className="markdown-body">
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {selectedReport.content}
+                  </ReactMarkdown>
+                </div>
               )}
             </div>
           </div>

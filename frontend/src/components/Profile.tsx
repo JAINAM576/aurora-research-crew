@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../supabase';
 import GlassCard from './GlassCard';
-import { Mail } from 'lucide-react';
+
 
 interface ProfileData {
   username: string;
