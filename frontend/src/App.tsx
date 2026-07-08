@@ -297,9 +297,13 @@ function App() {
                       Agent Orchestration Pipeline
                     </h2>
                     {elapsedTime > 0 && (
-                      <div className="mt-2 sm:mt-0 px-2.5 py-0.5 bg-aurora-gold/10 border border-aurora-gold/20 text-aurora-gold text-[10px] font-mono font-semibold rounded-full flex items-center gap-1.5 shadow-sm shadow-aurora-gold/5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-aurora-gold animate-pulse" />
-                        Time Elapsed: {elapsedTime.toFixed(1)}s
+                      <div className={`mt-2 sm:mt-0 px-2.5 py-0.5 border text-[10px] font-mono font-semibold rounded-full flex items-center gap-1.5 shadow-sm ${
+                        isLoading 
+                          ? 'bg-aurora-gold/10 border-aurora-gold/20 text-aurora-gold shadow-aurora-gold/5' 
+                          : 'bg-emerald-500/10 border-emerald-500/20 text-emerald-600 shadow-emerald-500/5'
+                      }`}>
+                        <span className={`w-1.5 h-1.5 rounded-full ${isLoading ? 'bg-aurora-gold animate-pulse' : 'bg-emerald-500'}`} />
+                        {isLoading ? 'Time Elapsed: ' : 'Total Time: '}{elapsedTime.toFixed(1)}s
                       </div>
                     )}
                   </div>
