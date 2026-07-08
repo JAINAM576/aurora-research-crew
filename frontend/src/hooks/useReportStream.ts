@@ -36,8 +36,8 @@ export const useReportStream = () => {
     const controller = new AbortController();
     abortControllerRef.current = controller;
     
-    // Fetch API URL dynamically from Vite env variables
-    const apiBaseUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+    // Fetch API URL dynamically from Vite env variables, stripping any trailing slash
+    const apiBaseUrl = (import.meta.env.VITE_API_URL || 'http://localhost:8000').replace(/\/$/, '');
     const url = `${apiBaseUrl}/api/report`;
     
     try {
