@@ -14,7 +14,7 @@
   --color-glass-bg-hover: var(--color-glass-bg-hover);
 
   --font-display: "Fraunces", serif;
-  --font-sans: "Manrope", sans-serif;
+  --font-sans: "Inter", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
   
   --animate-aurora-1: drift1 25s ease-in-out infinite;
@@ -85,6 +85,8 @@ body {
   font-family: var(--font-sans);
   overflow-x: hidden;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @media (prefers-reduced-motion: reduce) {

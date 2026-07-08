@@ -29,7 +29,7 @@ export const useReportStream = () => {
     setPipeline(initialPipeline);
   }, []);
 
-  const startStream = useCallback(async (topic: string) => {
+  const startStream = useCallback(async (topic: string, token: string) => {
     resetStream();
     setIsLoading(true);
     
@@ -44,6 +44,7 @@ export const useReportStream = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify({ topic }),
         signal: controller.signal,

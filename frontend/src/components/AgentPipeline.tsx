@@ -23,7 +23,7 @@ export const AgentPipeline: React.FC<AgentPipelineProps> = ({ pipeline }) => {
   return (
     <div className="w-full py-6 relative">
       {/* Desktop Connection Line */}
-      <div className="hidden md:block absolute top-[60px] left-[12%] right-[12%] h-[3px] bg-taupe-muted/20 -z-10 rounded-full overflow-hidden">
+      <div className="hidden md:block absolute top-[44px] left-[12%] right-[12%] h-[3px] bg-taupe-muted/20 -z-10 rounded-full overflow-hidden">
         {/* Active flowing gold thread */}
         <div
           className="h-full bg-gradient-to-r from-aurora-gold via-amber-glow to-aurora-gold transition-all duration-1000 ease-in-out relative"
@@ -60,7 +60,7 @@ export const AgentPipeline: React.FC<AgentPipelineProps> = ({ pipeline }) => {
           label="Fact-Checker Agent"
           status={pipeline.fact_checker.status}
           detail={pipeline.fact_checker.detail}
-          modelInfo="openrouter / deepseek-r1"
+          modelInfo="openrouter / nemotron-550b"
           iconType="fact_checker"
         />
         
@@ -68,7 +68,7 @@ export const AgentPipeline: React.FC<AgentPipelineProps> = ({ pipeline }) => {
           label="Writer Agent"
           status={pipeline.writer.status}
           detail={pipeline.writer.detail}
-          modelInfo="nim / llama-3.1-70b"
+          modelInfo="nim / deepseek-v4-pro"
           iconType="writer"
         />
         

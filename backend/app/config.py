@@ -10,6 +10,8 @@ class Settings(BaseSettings):
     ALLOWED_ORIGINS: str = "http://localhost:5173"
     PORT: int = 8000
     HOST: str = "0.0.0.0"
+    SUPABASE_URL: str = ""
+    SUPABASE_ANON_KEY: str = ""
 
     @property
     def cors_origins(self) -> List[str]:
