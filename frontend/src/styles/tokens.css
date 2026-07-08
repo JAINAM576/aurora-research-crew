@@ -1,0 +1,14 @@
+:root {
+  /* Color Tokens */
+  --color-base-white: #FDFBF7;
+  --color-champagne: #EDE3D0;
+  --color-aurora-gold: #D4A853;
+  --color-amber-glow: #F2C572;
+  --color-umber-text: #3A2E1F;
+  --color-taupe-muted: #A8987C;
+  
+  /* Semi-transparent variations for glassmorphism */
+  --color-glass-bg: rgba(253, 251, 247, 0.45);
+  --color-glass-border: rgba(255, 255, 255, 0.6);
+  --color-glass-bg-hover: rgba(253, 251, 247, 0.6);
+}

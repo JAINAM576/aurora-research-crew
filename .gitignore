@@ -1,0 +1,4 @@
+.env
+.venv
+.gitgnore
+multi-agent-report-writer-implementation-plan.md
