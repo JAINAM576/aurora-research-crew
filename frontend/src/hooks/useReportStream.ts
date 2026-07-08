@@ -36,8 +36,9 @@ export const useReportStream = () => {
     const controller = new AbortController();
     abortControllerRef.current = controller;
     
-    // Hardcoded URL matching the backend location
-    const url = 'http://localhost:8000/api/report';
+    // Fetch API URL dynamically from Vite env variables
+    const apiBaseUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+    const url = `${apiBaseUrl}/api/report`;
     
     try {
       const response = await fetch(url, {

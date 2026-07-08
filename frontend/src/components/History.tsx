@@ -13,6 +13,8 @@ interface Report {
   created_at: string;
 }
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
 export default function History() {
   const [reports, setReports] = useState<Report[]>([]);
   const [loading, setLoading] = useState(true);
@@ -31,7 +33,7 @@ export default function History() {
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) throw new Error('No active session found');
 
-      const response = await fetch('http://localhost:8000/api/reports', {
+      const response = await fetch(`${API_BASE_URL}/api/reports`, {
         headers: {
           'Authorization': `Bearer ${session.access_token}`
         }
@@ -58,7 +60,7 @@ export default function History() {
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) throw new Error('No active session found');
 
-      const response = await fetch(`http://localhost:8000/api/reports/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/reports/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${session.access_token}`
